@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-black: #0b0b0d;
+  --color-carbon-black: #111113;
+  --color-gunmetal: #1c1f24;
+  --color-steel-gray: #2a2e35;
+  --color-pure-white: #f5f5f5;
+  --color-accent-red: #ff1e1e;
+
+  --font-orbitron: var(--font-orbitron);
+  --font-rajdhani: var(--font-rajdhani);
+}
+
+/* Global resets & base styles */
+:root {
+  background-color: var(--color-deep-black);
+  color: var(--color-pure-white);
+  font-family: var(--font-rajdhani), sans-serif;
+  /* Tracking: 0.2em globally? No, specifically for headings mostly, but let's set a default tracking slightly loose */
+  letter-spacing: 0.05em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-deep-black);
+  color: var(--color-pure-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+/* Selection Color */
+::selection {
+  background-color: var(--color-accent-red);
+  color: var(--color-pure-white);
+}
+
+/* Utilities */
+.glass-blur {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(11, 11, 13, 0.4);
+}
+
+.border-thin {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.spotlight-radial {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+}
