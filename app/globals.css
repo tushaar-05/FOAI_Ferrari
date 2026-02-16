@@ -1,24 +1,31 @@
 @import "tailwindcss";
 
+:root {
+  /* Define raw colors here for fallback */
+  --deep-black: #0b0b0d;
+  --carbon-black: #111113;
+  --gunmetal: #1c1f24;
+  --steel-gray: #2a2e35;
+  --pure-white: #f5f5f5;
+  --accent-red: #ff1e1e;
+
+  /* Defaults */
+  background-color: var(--deep-black);
+  color: var(--pure-white);
+  font-family: var(--font-rajdhani), sans-serif;
+  letter-spacing: 0.05em;
+}
+
 @theme {
-  --color-deep-black: #0b0b0d;
-  --color-carbon-black: #111113;
-  --color-gunmetal: #1c1f24;
-  --color-steel-gray: #2a2e35;
-  --color-pure-white: #f5f5f5;
-  --color-accent-red: #ff1e1e;
+  --color-deep-black: var(--deep-black);
+  --color-carbon-black: var(--carbon-black);
+  --color-gunmetal: var(--gunmetal);
+  --color-steel-gray: var(--steel-gray);
+  --color-pure-white: var(--pure-white);
+  --color-accent-red: var(--accent-red);
 
   --font-orbitron: var(--font-orbitron);
   --font-rajdhani: var(--font-rajdhani);
-}
-
-/* Global resets & base styles */
-:root {
-  background-color: var(--color-deep-black);
-  color: var(--color-pure-white);
-  font-family: var(--font-rajdhani), sans-serif;
-  /* Tracking: 0.2em globally? No, specifically for headings mostly, but let's set a default tracking slightly loose */
-  letter-spacing: 0.05em;
 }
 
 body {
@@ -31,7 +38,12 @@ body {
 }
 
 /* Typography Overrides */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-orbitron), sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -57,4 +69,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .spotlight-radial {
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+}
+
+.stroke-text {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  color: transparent;
 }

@@ -6,12 +6,14 @@ const orbitron = Orbitron({
   subsets: ['latin'],
   variable: '--font-orbitron',
   weight: ['600', '700'],
+  display: 'swap',
 })
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
   variable: '--font-rajdhani',
-  weight: ['500', '600', '700'], 
+  weight: ['500', '600', '700'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -26,7 +28,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${orbitron.variable} ${rajdhani.variable} bg-deep-black text-pure-white antialiased overflow-x-hidden selection:bg-accent-red selection:text-pure-white`}>
+      <body
+        className={`${orbitron.variable} ${rajdhani.variable} bg-deep-black text-pure-white antialiased overflow-x-hidden selection:bg-accent-red selection:text-pure-white`}
+        style={{ backgroundColor: '#0b0b0d', color: '#f5f5f5' }}
+      >
         {children}
       </body>
     </html>
