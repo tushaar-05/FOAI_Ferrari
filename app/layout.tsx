@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Orbitron, Rajdhani } from 'next/font/google'
 import './globals.css'
+import SmoothScroll from '@/components/SmoothScroll'
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${orbitron.variable} ${rajdhani.variable} bg-deep-black text-pure-white antialiased overflow-x-hidden selection:bg-accent-red selection:text-pure-white`}
         style={{ backgroundColor: '#0b0b0d', color: '#f5f5f5' }}
       >
+        <SmoothScroll />
         {children}
       </body>
     </html>

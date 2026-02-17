@@ -5,6 +5,7 @@ import { useScroll } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import FerrariScrollCanvas from '@/components/FerrariScrollCanvas'
 import FerrariExperience from '@/components/FerrariExperience'
+import TechnicalSpecifications from '@/components/TechnicalSpecifications'
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -51,32 +52,7 @@ export default function Home() {
 
       {/* Post-Scroll Content (Footer / Detailed Specs) */}
       <div className="relative z-30 bg-deep-black border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold mb-16 text-center">TECHNICAL SPECIFICATIONS</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10 border border-white/10">
-            {[
-              { label: "Engine Type", value: "65° V12" },
-              { label: "Displacement", value: "6262 cc" },
-              { label: "Max Power", value: "800 cv @ 9000 rpm" },
-              { label: "Max Torque", value: "700 Nm @ 6750 rpm" },
-              { label: "Hybrid System", value: "HY-KERS" },
-              { label: "Total Power", value: "963 cv" },
-              { label: "Max Speed", value: "> 350 km/h" },
-              { label: "0-100 km/h", value: "< 3 sec" },
-              { label: "0-200 km/h", value: "< 7 sec" },
-            ].map((item, i) => (
-              <div key={i} className="bg-deep-black p-12 hover:bg-white/5 transition-colors group">
-                <span className="block text-accent-red text-xs tracking-widest uppercase mb-2 font-rajdhani">{item.label}</span>
-                <span className="block text-2xl font-orbitron font-medium group-hover:text-white transition-colors text-gray-300">{item.value}</span>
-              </div>
-            ))}
-          </div>
-
-          <footer className="mt-32 border-t border-white/5 pt-12 text-center text-gray-600 font-rajdhani text-sm uppercase tracking-widest">
-            Ferrari LaFerrari Nero Spec Concept © 2026. Not affiliated with Ferrari S.p.A.
-          </footer>
-        </div>
+        <TechnicalSpecifications />
       </div>
     </main>
   )
